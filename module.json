@@ -1,0 +1,12 @@
+{
+    "id":"module-comment-eb0f0f78-a34c-4507-9924-6aa2f2700096822400",
+    "name": "Comment",
+    "version":"v1.0.0",
+    "alias": "comment",
+    "description": "",
+    "keywords": [],
+    "priority": 200,
+    "aliases": {},
+    "namespace":"Sokeio\\Comment",
+    "requires": []
+}

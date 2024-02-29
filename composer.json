@@ -1,0 +1,27 @@
+{
+    "name": "sokeio/module-comment",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nguyen Van Hau",
+            "email": "nguyenvanhaudev@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": ["Sokeio\\Comment\\CommentServiceProvider"],
+            "aliases": {}
+        }
+    },
+    "autoload": {
+         "files": [
+            "helpers/constraint.php",
+            "helpers/function.php"
+        ],
+        "psr-4": {
+            "Sokeio\\Comment\\": "src",
+            "Sokeio\\Comment\\Database\\Factories\\": "database/factories",
+            "Sokeio\\Comment\\Database\\Seeders\\": "database/seeders"
+        }
+    }
+}
