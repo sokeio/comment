@@ -2,11 +2,16 @@
     "name": "sokeio/comment",
     "description": "",
     "authors": [
-        {
-            "name": "Nguyen Van Hau",
-            "email": "nguyenvanhaudev@gmail.com"
-        }
+      {
+        "name": "Nguyen Van Hau",
+        "email": "nguyenvanhau.soft@gmail.com",
+        "role": "Developer",
+        "homepage": "https://github.com/devhau"
+      }
     ],
+    "require": {
+      "league/commonmark": "^2.4.2"
+    },
     "extra": {
         "laravel": {
             "providers": ["Sokeio\\Comment\\CommentServiceProvider"],

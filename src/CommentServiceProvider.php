@@ -2,9 +2,12 @@
 
 namespace Sokeio\Comment;
 
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
+use Sokeio\Comment\Policies\CommentPolicy;
 use Sokeio\Laravel\ServicePackage;
 use Sokeio\Concerns\WithServiceProvider;
+use Sokeio\Comment\Providers\MarkdownServiceProvider;
 
 class CommentServiceProvider extends ServiceProvider
 {
@@ -30,6 +33,13 @@ class CommentServiceProvider extends ServiceProvider
     }
     public function packageRegistered()
     {
+        $this->app->bind(CommentPolicy::class, function ($app) {
+            return new CommentPolicy;
+        });
+
+        Gate::policy(\Sokeio\Comment\Models\Comment::class, CommentPolicy::class);
+
+        $this->app->register(MarkdownServiceProvider::class);
         $this->extending();
     }
     private function bootGate()
