@@ -30,7 +30,7 @@
                             </button>
                             <div class="dropdown-menu">
                                 @can('update', $comment)
-                                    <a class="dropdown-item" wire:click="$toggle('isEditing')" href="#">
+                                    <a class="dropdown-item" wire:click="$toggle('isEditing')">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-edit dropdown-item-icon" width="24"
                                             height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -50,8 +50,7 @@
                                                 this.$wire.deleteComment();
                                             }
                                         }
-                                    }"
-                                        href="#">
+                                    }">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-trash dropdown-item-icon" width="24"
                                             height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -100,25 +99,4 @@
             @endforeach
         </article>
     @endif
-    <script>
-        function detectAtSymbol() {
-            const textarea = document.getElementById('reply-comment');
-            if (!textarea) {
-                return;
-            }
-
-            const cursorPosition = textarea.selectionStart;
-            const textBeforeCursor = textarea.value.substring(0, cursorPosition);
-            const atSymbolPosition = textBeforeCursor.lastIndexOf('@');
-
-            if (atSymbolPosition !== -1) {
-                const searchTerm = textBeforeCursor.substring(atSymbolPosition + 1);
-                if (searchTerm.trim().length > 0) {
-                    @this.dispatch('getUsers', {
-                        searchTerm: searchTerm
-                    });
-                }
-            }
-        }
-    </script>
 </div>

@@ -1,6 +1,6 @@
 <div class="d-inline-flex align-items-center me-2">
     <button wire:click="like"
-        class="d-inline-flex align-items-center space-2 {{ $comment->isLiked() ? 'text-success' : 'text-secondary' }} border-0 focus-outline-none">
+        class="d-inline-flex align-items-center space-2 {{ $comment->isLiked() ? 'text-success' : 'text-secondary' }} border-0 rounded-1 focus-outline-none">
         <svg class="bi bi-hand-thumbs-up" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             fill="currentColor" viewBox="0 0 16 16">
             <path

@@ -14,7 +14,7 @@
         <textarea id="{{ $inputId }}" rows="6"
             class="form-control py-0 w-full text-sm text-gray-900 border-0 @error($state . '.body')
                               border-danger @enderror"
-            placeholder="Write a comment..." wire:model="{{ $state }}.body" oninput="detectAtSymbol()"></textarea>
+            placeholder="Write a comment..." wire:model="{{ $state }}.body" ></textarea>
         @if (!empty($users) && $users->count() > 0)
             @include('comment::partials.dropdowns.users')
         @endif
