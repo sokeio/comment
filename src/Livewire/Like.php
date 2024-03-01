@@ -32,7 +32,6 @@ class Like extends Component
             $this->comment->likes()->create([
                 'user_id' => auth()->id(),
             ]);
-
             $this->count++;
         } elseif ($ip && $userAgent) {
             $this->comment->likes()->create([
