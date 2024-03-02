@@ -32,6 +32,7 @@ trait Rateable
                 ]
             ]);
             $_rate->addUserRate($rate);
+            unset($this->rate);
         }
     }
 }
