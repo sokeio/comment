@@ -102,7 +102,7 @@ class Rate extends Model
         $userRated = $this->getRated();
         $oldRated = 0;
         if ($userRated) {
-            $oldRated = $userRated->rate;
+            $oldRated = $this->getUserRateCurrent();
             $userRated->update([
                 'rate' => $rate
             ]);

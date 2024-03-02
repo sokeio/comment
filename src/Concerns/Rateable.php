@@ -25,13 +25,13 @@ trait Rateable
         if ($this->rate != null) {
             $this->rate->changeRate($rate, $rateMax);
         } else {
-            $rate =  $this->rate()->create([
+            $_rate =  $this->rate()->create([
                 'rate' => $rate,
                 'rates' => [
                     'rate-' . $rate => 1
                 ]
             ]);
-            $rate->addUserRate($rate);
+            $_rate->addUserRate($rate);
         }
     }
 }

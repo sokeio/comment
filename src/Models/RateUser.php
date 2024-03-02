@@ -24,4 +24,7 @@ class RateUser extends Model
         'user_agent',
     ];
 
+    public $casts = [
+        'rate' => 'integer',
+    ];
 }
