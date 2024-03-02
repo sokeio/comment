@@ -24,7 +24,7 @@ class Rate extends Model
     ];
     public $casts = [
         'rates' => 'array',
-        'rate' => 'float',
+        'rate' => 'decimal:2',
     ];
     /**
      * @return MorphTo

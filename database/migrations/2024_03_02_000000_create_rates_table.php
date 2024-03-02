@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('rates', function (Blueprint $table) {
             $table->id();
             $table->morphs('rateable');
-            $table->float('rate')->default(0);
+            $table->decimal('rate')->default(0);
             $table->json('rates')->nullable();
             $table->timestamps();
         });
