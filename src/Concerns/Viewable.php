@@ -3,7 +3,7 @@
 namespace Sokeio\Comment\Concerns;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Sokeio\Comment\Models\Rate;
+use Sokeio\Comment\Models\View;
 
 trait Viewable
 {
@@ -12,27 +12,24 @@ trait Viewable
      */
     public function view(): \Illuminate\Database\Eloquent\Relations\MorphOne
     {
-        return $this->morphOne(Rate::class, 'rateable');
+        return $this->morphOne(View::class, 'viewable');
     }
-    public $rateMax = 5;
-    public $rateIcon = [
-        'unRated' => 'bi bi-star',
-        'halfRated' => 'bi bi-star-half text-warning',
-        'rated' => 'bi bi-star-fill text-warning',
-    ];
-    public function changeRate($rate, $rateMax)
+    public function checkView()
     {
-        if ($this->rate != null) {
-            $this->rate->changeRate($rate, $rateMax);
+        if ($this->view) {
+            if (!$this->view->isViewed()) {
+                $this->view->AddView();
+            }
         } else {
-            $_rate =  $this->rate()->create([
-                'rate' => $rate,
-                'rates' => [
-                    'rate-' . $rate => 1
-                ]
-            ]);
-            $_rate->addUserRate($rate);
-            unset($this->rate);
+            $view = $this->view()->create(['count' => 0]);
+            $view->AddView();
         }
+    }
+    public function viewCount()
+    {
+        if ($this->view) {
+            return $this->view->count;
+        }
+        return 0;
     }
 }

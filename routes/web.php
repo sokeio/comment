@@ -11,3 +11,9 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
+Route::get('test', function () {
+    echo '<pre>';
+   print_r(\Ip2location\IP2LocationLaravel\Facade\IP2LocationLaravel::get('1.55.227.146'));
+});

@@ -16,11 +16,12 @@ class ViewCount extends Component
     }
     public function checkView()
     {
-        $this->count++;
+        $this->model->checkView();
+        $this->loadView();
     }
     public function loadView()
     {
-        $this->count++;
+        $this->count = $this->model->viewCount();
     }
     public function render()
     {

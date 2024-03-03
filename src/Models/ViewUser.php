@@ -13,7 +13,6 @@ class ViewUser extends Model
      * @var string
      */
     protected $table = 'view_users';
-
     /**
      * @var string[]
      */
@@ -21,6 +20,10 @@ class ViewUser extends Model
         'user_id',
         'ip',
         'user_agent',
+        'country_code',
+        'year',
+        'month',
+        'day',
     ];
 
     public $casts = [];
