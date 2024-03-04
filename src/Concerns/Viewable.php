@@ -10,25 +10,25 @@ trait Viewable
     /**
      * @return MorphMany
      */
-    public function view(): \Illuminate\Database\Eloquent\Relations\MorphOne
+    public function views(): \Illuminate\Database\Eloquent\Relations\MorphOne
     {
         return $this->morphOne(View::class, 'viewable');
     }
     public function checkView()
     {
-        if ($this->view) {
-            if (!$this->view->isViewed()) {
-                $this->view->AddView();
+        if ($this->views) {
+            if (!$this->views->isViewed()) {
+                $this->views->AddView();
             }
         } else {
-            $view = $this->view()->create(['count' => 0]);
-            $view->AddView();
+            $views = $this->views()->create(['count' => 0]);
+            $views->AddView();
         }
     }
     public function viewCount()
     {
-        if ($this->view) {
-            return $this->view->count;
+        if ($this->views) {
+            return $this->views->count;
         }
         return 0;
     }
