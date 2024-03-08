@@ -18,11 +18,11 @@ trait Viewable
     {
         if ($this->views) {
             if (!$this->views->isViewed()) {
-                $this->views->AddView();
+                $this->views->addView();
             }
         } else {
             $views = $this->views()->create(['count' => 0]);
-            $views->AddView();
+            $views->addView();
         }
     }
     public function viewCount()
