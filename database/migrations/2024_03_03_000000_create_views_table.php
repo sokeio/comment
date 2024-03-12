@@ -47,6 +47,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('view_users');
+        Schema::dropIfExists('view_dates');
         Schema::dropIfExists('views');
     }
 };
