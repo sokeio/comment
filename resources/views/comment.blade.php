@@ -8,7 +8,7 @@
             'button' => 'Edit Comment',
         ])
     @else
-        <article class="p-4 mb-1 bg-white rounded border">
+        <article class="p-3 mb-1 bg-white rounded border">
             <footer class="d-flex justify-content-between align-items-center mb-1">
                 <div class="d-flex align-items-center">
                     <p class="d-inline-flex align-items-center me-3 text-sm text-dark"><img class="me-2 rounded-circle"
