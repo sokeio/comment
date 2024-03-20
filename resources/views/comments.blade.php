@@ -12,7 +12,7 @@
                 'button' => 'Post comment',
             ])
         @else
-            <a class="py-3 text-sm" href="{{ apply_filters('login_url', route('site.login')) }}">
+            <a class="py-3 text-sm" href="{{ applyFilters('login_url', route('site.login')) }}">
                 @lang('Log in to comment!')
             </a>
         @endauth

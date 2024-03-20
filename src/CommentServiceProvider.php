@@ -45,7 +45,7 @@ class CommentServiceProvider extends ServiceProvider
     private function bootGate()
     {
         if (!$this->app->runningInConsole()) {
-            add_filter(PLATFORM_PERMISSION_CUSTOME, function ($prev) {
+            addFilter(PLATFORM_PERMISSION_CUSTOME, function ($prev) {
                 return [
                     ...$prev
                 ];
